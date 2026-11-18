@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Editar equipamento</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    
+
+</head>
+
+<body class="pagina-editar">
+
+    
+
+            
+
+                <div class="app">
+
+                    <header class="top">
+
+                        <img src="assets/icone-gtm.png">
+
+                        <div class="brand">
+                            GTM ALIMENTOS
+                            <small>TECNOLOGIA DA INFORMAÇÃO</small>
+                        </div>
+
+                        <div class="user">
+                            <span id="abrirPerfil" class="nome-usuario">JOÃO VICTOR</span>
+                        </div>
+
+                    </header>
+
+                    <aside class="side">
+
+                        <h3>PATRIMÔNIO DE TI</h3>
+
+                        <div class="nav" data-ui-click="a4">
+                            Visão geral
+                        </div>
+
+                        <div class="nav active" data-ui-click="a5">
+                            Equipamentos
+                        </div>
+
+                        <div class="nav" data-ui-click="a6">
+                            Cadastrar Equipamentos
+                        </div>
+
+                        <div class="nav nav-static">
+                            Movimentações
+                        </div>
+
+                    </aside>
+
+                    <main class="main">
+
+                        <div class="eyebrow">
+                            PATRIMÔNIO / EQUIPAMENTOS
+                        </div>
+
+                        <h1 class="title">
+                            Editar equipamento
+                        </h1>
+
+                        <p class="sub">
+                            Altere as informações cadastrais do equipamento selecionado.
+                        </p>
+
+                        <form id="formEditar" class="form-container" data-ui-submit="a7">
+
+                            <input type="hidden" id="idEquipamento" value="" data-local-value="ID">
+
+
+                            <!-- INFORMAÇÕES GERAIS -->
+
+                            <div class="form-section">
+
+                                <div class="form-section-title">
+                                    Informações gerais
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+
+                                        <label for="patrimonio">
+                                            Patrimônio
+                                        </label>
+
+                                        <input type="text" id="patrimonio" value="" data-local-value="PATRIMONIO"
+                                        required>
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="categoria">
+                                            Categoria
+                                        </label>
+
+                                        <input type="text" id="categoria" value="" data-local-value="CATEGORIA">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="tipo">
+                                            Tipo
+                                        </label>
+
+                                        <input type="text" id="tipo" value="" data-local-value="TIPO">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="marca">
+                                            Marca
+                                        </label>
+
+                                        <input type="text" id="marca" value="" data-local-value="MARCA">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="modelo">
+                                            Modelo
+                                        </label>
+
+                                        <input type="text" id="modelo" value="" data-local-value="MODELO">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="serial">
+                                            Número de série
+                                        </label>
+
+                                        <input type="text" id="serial" value="" data-local-value="SERIAL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="local">
+                                            Local
+                                        </label>
+
+                                        <input type="text" id="local" value="" data-local-value="LOCAL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="setor">
+                                            Setor
+                                        </label>
+
+                                        <input type="text" id="setor" value="" data-local-value="SETOR">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="status">
+                                            Status
+                                        </label>
+
+                                        <input type="text" id="status" value="" data-local-value="STATUS">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="responsavel">
+                                            Responsável
+                                        </label>
+
+                                        <input type="text" id="responsavel" value="" data-local-value="RESPONSAVEL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="email">
+                                            E-mail
+                                        </label>
+
+                                        <input type="text" id="email" value="" data-local-value="EMAIL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="telefone">
+                                            Telefone
+                                        </label>
+
+                                        <input type="text" id="telefone" value="" data-local-value="TELEFONE">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="termo">
+                                            Termo
+                                        </label>
+
+                                        <input type="text" id="termo" value="" data-local-value="TERMO">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- COMPUTADOR -->
+
+                            <div id="formComputador" class="form-section tipo-form">
+
+                                <div class="form-section-title">
+                                    Informações do computador
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+
+                                        <label for="processador">
+                                            Processador
+                                        </label>
+
+                                        <input type="text" id="processador" value="" data-local-value="PROCESSADOR">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="memoriaRam">
+                                            Memória RAM
+                                        </label>
+
+                                        <input type="text" id="memoriaRam" value="" data-local-value="MEMORIARAM">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="armazenamento">
+                                            Armazenamento
+                                        </label>
+
+                                        <input type="text" id="armazenamento" value="" data-local-value="ARMAZENAMENTO">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="sistemaOperacional">
+                                            Sistema operacional
+                                        </label>
+
+                                        <input type="text" id="sistemaOperacional" value="" data-local-value="SISTEMAOPERACIONAL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="etiquetaFabricante">
+                                            Etiqueta do fabricante
+                                        </label>
+
+                                        <input type="text" id="etiquetaFabricante" value="" data-local-value="ETIQUETAFABRICANTE">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="nomeNaRede">
+                                            Nome na rede
+                                        </label>
+
+                                        <input type="text" id="nomeNaRede" value="" data-local-value="NOMENAREDE">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- CELULAR -->
+
+                            <div id="formCelular" class="form-section tipo-form">
+
+                                <div class="form-section-title">
+                                    Informações do celular
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+
+                                        <label for="imei1">
+                                            IMEI 1
+                                        </label>
+
+                                        <input type="text" id="imei1" value="" data-local-value="IMEI1">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="imei2">
+                                            IMEI 2
+                                        </label>
+
+                                        <input type="text" id="imei2" value="" data-local-value="IMEI2">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="capacidade">
+                                            Capacidade
+                                        </label>
+
+                                        <input type="text" id="capacidade" value="" data-local-value="CAPACIDADE">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="cor">
+                                            Cor
+                                        </label>
+
+                                        <input type="text" id="cor" value="" data-local-value="COR">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="numero">
+                                            Número
+                                        </label>
+
+                                        <input type="text" id="numero" value="" data-local-value="NUMERO">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="operadora">
+                                            Operadora
+                                        </label>
+
+                                        <input type="text" id="operadora" value="" data-local-value="OPERADORA">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- COMUM -->
+
+                            <div id="formComum" class="form-section tipo-form">
+
+                                <div class="form-section-title">
+                                    Informações do item
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+
+                                        <label for="condicao">
+                                            Condição
+                                        </label>
+
+                                        <input type="text" id="condicao" value="" data-local-value="CONDICAO">
+
+                                    </div>
+
+                                    <div class="field field-full">
+
+                                        <label for="observacoes">
+                                            Observações
+                                        </label>
+
+                                        <textarea id="observacoes" data-local-value="OBSERVACOES"></textarea>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- COMPRA -->
+
+                            <div class="form-section" data-ti-only>
+
+                                <div class="form-section-title">
+                                    Informações de compra
+                                </div>
+
+                                <div class="form-grid">
+
+                                    <div class="field">
+
+                                        <label for="dataCompra">
+                                            Data da compra
+                                        </label>
+
+                                        <input type="date" id="dataCompra" value="" data-local-value="DATACOMPRA">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="fornecedor">
+                                            Fornecedor
+                                        </label>
+
+                                        <input type="text" id="fornecedor" value="" data-local-value="FORNECEDOR">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="notaFiscal">
+                                            Nota fiscal
+                                        </label>
+
+                                        <input type="text" id="notaFiscal" value="" data-local-value="NOTAFISCAL">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="valor">
+                                            Valor
+                                        </label>
+
+                                        <input type="text" id="valor" value="" data-local-value="VALOR">
+
+                                    </div>
+
+                                    <div class="field">
+
+                                        <label for="garantia">
+                                            Garantia
+                                        </label>
+
+                                        <input type="date" id="garantia" value="" data-local-value="GARANTIA">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="botoes-form">
+
+                                <button type="button" class="button button-secondary" data-ui-click="a8">
+
+                                    CANCELAR
+
+                                </button>
+
+                                <button type="submit" class="button button-primary">
+
+                                    SALVAR ALTERAÇÕES
+
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </main>
+
+                </div>
+
+
+                <div id="modalSucesso" class="modal-sucesso">
+
+                    <div class="modal-sucesso-conteudo">
+
+                        <h2>
+                            Alterações salvas
+                        </h2>
+
+                        <p>
+                            As informações do equipamento foram atualizadas com sucesso.
+                        </p>
+
+                        <button type="button" class="button button-primary" data-ui-click="a9">
+
+                            OK
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div id="modalErro">
+                    <div class="modal-conteudo">
+                        <h2>Não foi possível atualizar</h2>
+                        <p id="mensagemErro"></p>
+                        <button type="button" id="okErro">OK</button>
+                    </div>
+                </div>
+
+                <div id="modalPerfil">
+
+    <div class="modal-perfil-conteudo">
+
+        <button
+            type="button"
+            id="fecharPerfil"
+            class="fechar-modal">
+            ×
+        </button>
+
+        <h2>DESENVOLVIDO POR:</h2>
+
+        <div class="perfil-info">
+            <strong>Nome:</strong>
+            <span>JOÃO VICTOR</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Setor:</strong>
+            <span>TI</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Email:</strong>
+            <span>ti1@gtmalimentos.com.br</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Telefone:</strong>
+            <span>(31) 99855-5613</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+                
+
+                <script src="js/actions.js"></script>
+<script src="js/local-data.js"></script>
+<script src="js/local-view.js"></script>
+                
+
+            
+
+        
+
+</body>
+
+</html>

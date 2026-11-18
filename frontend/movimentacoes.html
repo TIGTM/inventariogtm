@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Movimentação de Equipamento</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+    <div class="app">
+        <header class="top">
+            <img
+                src="assets/icone-gtm.png"
+                alt="GTM"
+            >
+
+            <div class="brand">
+                GTM ALIMENTOS
+                <small>TECNOLOGIA DA INFORMAÇÃO</small>
+            </div>
+
+            <div class="user">
+                <span id="abrirPerfil" class="nome-usuario">JOÃO VICTOR</span>
+            </div>
+        </header>
+
+        <aside class="side">
+            <div
+                class="nav" data-ui-click="a16"
+            >
+                Visão geral
+            </div>
+
+            <div
+                class="nav" data-ui-click="a17"
+            >
+                Equipamentos
+            </div>
+
+            <div
+                class="nav" data-ui-click="a18"
+            >
+                Cadastrar Equipamentos
+            </div>
+
+            <div
+                class="nav active nav-static"
+            >
+                Movimentações
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="main">
+            <div class="movimentacao-container">
+                <div class="eyebrow">
+                    PATRIMÔNIO DE TI
+                </div>
+
+                <h1 class="title">
+                    Movimentar equipamento
+                </h1>
+
+                <p class="sub">
+                    Registre a nova situação do equipamento.
+                </p>
+
+                
+                            <!-- EQUIPAMENTO SELECIONADO -->
+                            <div class="equipamento-selecionado aberto">
+                                <strong>
+                                    Equipamento selecionado
+                                </strong>
+
+                                <div class="equipamento-detalhes">
+                                    <div class="equipamento-detalhe">
+                                        <span>Patrimônio</span>
+                                        <strong>
+                                            <span data-local-text="PATRIMONIO"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Categoria</span>
+                                        <strong>
+                                            <span data-local-text="CATEGORIA"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Marca / Modelo</span>
+                                        <strong>
+                                            <span data-local-text="MARCA"></span>
+                                            /
+                                            <span data-local-text="MODELO"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Nº de Série</span>
+                                        <strong>
+                                            <span data-local-text="SERIAL"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Status atual</span>
+                                        <strong>
+                                            <span data-local-text="STATUS"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Responsável atual</span>
+                                        <strong>
+                                            <span data-local-text="RESPONSAVEL"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Setor atual</span>
+                                        <strong>
+                                            <span data-local-text="SETOR"></span>
+                                        </strong>
+                                    </div>
+
+                                    <div class="equipamento-detalhe">
+                                        <span>Local atual</span>
+                                        <strong>
+                                            <span data-local-text="LOCAL"></span>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input
+                                type="hidden"
+                                id="equipamentoId"
+                                value="" data-local-value="ID"
+                            >
+
+                            <!-- FORMULÁRIO -->
+                            <form
+                                id="formMovimentacao"
+                                class="movimentacao-form" data-ui-submit="a20"
+                            >
+                                <!-- DATA / STATUS -->
+                                <div class="form-section">
+                                    <h3>Nova movimentação</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="dataMovimento">
+                                                Data
+                                            </label>
+
+                                            <input
+                                                type="date"
+                                                id="dataMovimento"
+                                                required
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="statusNovo">
+                                                Status
+                                            </label>
+
+                                            <select
+                                                id="statusNovo"
+                                                required data-ui-change="a21"
+                                            >
+                                                <option value="">
+                                                    Selecione
+                                                </option>
+
+                                                <option value="Em uso">
+                                                    Em uso
+                                                </option>
+
+                                                <option value="Em estoque">
+                                                    Em estoque
+                                                </option>
+
+                                                <option value="Em manutenção">
+                                                    Em manutenção
+                                                </option>
+
+                                                <option value="Baixa">
+                                                    Baixa
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CAMPOS EM USO -->
+                                <div
+                                    id="camposUso"
+                                    class="form-section grupo-dinamico"
+                                >
+                                    <h3>Informações de uso</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="responsavel">
+                                                Responsável
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="responsavel"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email">
+                                                E-mail corporativo
+                                            </label>
+
+                                            <input
+                                                type="email"
+                                                id="email"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="setor">
+                                                Setor
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="setor"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="telefone">
+                                                Telefone
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="telefone"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="local">
+                                                Local
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="local"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="termo">
+                                                Termo
+                                            </label>
+
+                                            <select id="termo">
+                                                <option value="N/A">
+                                                    N/A
+                                                </option>
+
+                                                <option value="Sim">
+                                                    ASSINADO
+                                                </option>
+
+                                                <option value="Não">
+                                                    NÃO ASSINADO
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CAMPOS LOCAL -->
+                                <div
+                                    id="camposLocal"
+                                    class="form-section grupo-dinamico"
+                                >
+                                    <h3>Localização</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="localDestino">
+                                                Local
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="localDestino"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MOTIVO -->
+                                <div class="form-section">
+                                    <h3>Motivo</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group full">
+                                            <label for="motivo">
+                                                Motivo
+                                            </label>
+
+                                            <textarea
+                                                id="motivo"
+                                                rows="4"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- OBSERVAÇÕES -->
+                                <div class="form-section">
+                                    <h3>Observações</h3>
+
+                                    <div class="form-grid">
+                                        <div class="form-group full">
+                                            <label for="observacoes">
+                                                Observações
+                                            </label>
+
+                                            <textarea
+                                                id="observacoes"
+                                                rows="4"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AÇÕES -->
+                                <div class="acoes-form">
+                                    <button
+                                        type="button"
+                                        class="btn-limpar" data-ui-click="a22"
+                                    >
+                                        LIMPAR
+                                    </button>
+
+                                    <button
+                                        type="submit"
+                                        class="btn-salvar-movimento"
+                                    >
+                                        SALVAR MOVIMENTAÇÃO
+                                    </button>
+                                </div>
+                            </form>
+                        
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL DE PERFIL -->
+    <div id="modalPerfil">
+        <div class="modal-perfil-conteudo">
+            <button
+                type="button"
+                id="fecharPerfil"
+                class="fechar-modal"
+            >
+                ×
+            </button>
+
+            <h2>DESENVOLVIDO POR:</h2>
+
+            <div class="perfil-info">
+                <strong>Nome:</strong>
+                <span>JOÃO VICTOR</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Setor:</strong>
+                <span>TI</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Email:</strong>
+                <span>ti1@gtmalimentos.com.br</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Telefone:</strong>
+                <span>(31) 99855-5613</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="js/actions.js"></script>
+<script src="js/local-data.js"></script>
+<script src="js/local-view.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <title>
+        Cadastrar Equipamento - GTM
+    </title>
+
+</head>
+
+
+<body>
+
+<div class="app"> 
+
+
+<header class="top">
+
+    <img
+        src="assets/icone-gtm.png"
+        class="logo"
+        alt="GTM"
+    >
+
+    <div data-ui-click="a0"
+        class="brand"
+    >
+
+        GTM ALIMENTOS
+
+        <small>
+            TECNOLOGIA DA INFORMAÇÃO
+        </small>
+
+    </div>
+
+
+    <div class="user">
+
+          <span id="abrirPerfil" class="nome-usuario">JOÃO VICTOR</span>
+
+    </div>
+
+</header>
+
+
+    <aside class="side">
+
+
+        <h3>
+            PATRIMÔNIO DE TI
+        </h3>
+
+
+    <div
+        class="nav" data-ui-click="a1"
+    >
+        Visão geral
+    </div>
+
+
+    <div
+        class="nav" data-ui-click="a2"
+    >
+        Equipamentos
+    </div>
+
+
+    <div class="nav active">
+
+        Cadastrar Equipamentos
+
+    </div>
+
+
+    <div class="nav nav-static">
+
+        Movimentações
+
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+
+<div class="eyebrow">
+
+    PATRIMÔNIO
+
+</div>
+
+
+<h1 class="title">
+
+    Cadastrar equipamento
+
+</h1>
+
+
+<p class="sub">
+
+    Cadastre um novo equipamento no patrimônio de TI.
+
+</p>
+
+
+<section class="panel">
+
+
+<div class="equipment-header">
+
+    <h2 class="section-title">
+
+        Dados do equipamento
+
+    </h2>
+
+</div>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label for="tipoAtivo">
+        Tipo de ativo
+    </label>
+
+<select id="tipoAtivo" class="select">
+    <option value="">Selecione</option>
+    <option value="computador">Computador</option>
+    <option value="celular">Celular</option>
+    <option value="comum">Comum</option>
+</select>
+
+</div>
+
+
+<div class="field">
+
+    <label for="patrimonio">
+        Patrimônio
+    </label>
+
+    <input
+        id="patrimonio"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="marca">
+        Marca
+    </label>
+
+    <input
+        id="marca"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="modelo">
+        Modelo
+    </label>
+
+    <input
+        id="modelo"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="local">
+        Local
+    </label>
+
+    <input
+        id="local"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+</div>
+
+
+<div
+    id="formComputador"
+    style="display:none;"
+>
+
+<h3 class="section-title">
+
+    Dados do computador
+
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label for="processador">
+        Processador
+    </label>
+
+    <input
+        id="processador"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="memoria">
+        Memória RAM
+    </label>
+
+    <input
+        id="memoria"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="armazenamento">
+        Armazenamento
+    </label>
+
+    <input
+        id="armazenamento"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="sistemaOperacional">
+        Sistema operacional
+    </label>
+
+    <input
+        id="sistemaOperacional"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="numeroSerieComputador">
+        Número de série
+    </label>
+
+    <input
+        id="numeroSerieComputador"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="etiquetaFabricante">
+        Etiqueta do fabricante
+    </label>
+
+    <input
+        id="etiquetaFabricante"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="nomeRede">
+        Nome na rede
+    </label>
+
+    <input
+        id="nomeRede"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+    id="formCelular"
+    style="display:none;"
+>
+
+<h3 class="section-title">
+
+    Dados do celular
+
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label for="numeroSerieCelular">
+        Número de série
+    </label>
+
+    <input
+        id="numeroSerieCelular"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="imei1">
+        IMEI 1
+    </label>
+
+    <input
+        id="imei1"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="imei2">
+        IMEI 2
+    </label>
+
+    <input
+        id="imei2"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="capacidade">
+        Capacidade
+    </label>
+
+    <input
+        id="capacidade"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="cor">
+        Cor
+    </label>
+
+    <input
+        id="cor"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="numero">
+        Número
+    </label>
+
+    <input
+        id="numero"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="operadora">
+        Operadora
+    </label>
+
+    <input
+        id="operadora"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="iccid">
+        ICCID
+    </label>
+
+    <input
+        id="iccid"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div
+    id="formComum"
+    style="display:none;"
+>
+
+<h3 class="section-title">
+
+    Dados do equipamento comum
+
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+    <label for="tipoComum">
+        Tipo
+    </label>
+
+    <input
+        id="tipoComum"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="serial">
+        Número de série
+    </label>
+
+    <input
+        id="serial"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="condicao">
+        Condição
+    </label>
+
+    <input
+        id="condicao"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="descricao">
+        Descrição
+    </label>
+
+    <input
+        id="descricao"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="observacoes">
+        Observações
+    </label>
+
+    <textarea
+        id="observacoes"
+        class="input"
+    ></textarea>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<h3 class="section-title" data-ti-only>
+
+    Aquisição
+
+</h3>
+
+
+<div class="form-grid" data-ti-only>
+
+
+<div class="field">
+
+    <label for="compra">
+        Data da compra
+    </label>
+
+    <input
+        id="compra"
+        class="input"
+        type="date"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="fornecedor">
+        Fornecedor
+    </label>
+
+    <input
+        id="fornecedor"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="nf">
+        Nota fiscal
+    </label>
+
+    <input
+        id="nf"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="valor">
+        Valor
+    </label>
+
+    <input
+        id="valor"
+        class="input"
+        type="text"
+    >
+
+</div>
+
+
+<div class="field">
+
+    <label for="garantia">
+        Garantia
+    </label>
+
+    <input
+        id="garantia"
+        class="input"
+        type="date"
+    >
+
+</div>
+
+
+</div>
+
+
+<div class="form-actions">
+
+
+<button
+    type="button"
+    class="btn-cancelar" data-ui-click="a3"
+>
+
+    CANCELAR
+
+</button>
+
+
+<button
+    type="button"
+    id="btnSalvar"
+    class="button"
+>
+
+    SALVAR EQUIPAMENTO
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+</div>
+
+
+<div
+    id="modalSucesso"
+    class="modal-overlay"
+>
+
+<div class="confirmar-modal">
+
+
+<div class="modal-header">
+
+    <h2>
+
+        Cadastro realizado
+
+    </h2>
+
+</div>
+
+
+<div class="confirmar-conteudo">
+
+    <h2>
+
+        Equipamento cadastrado com sucesso!
+
+    </h2>
+
+    <p>
+
+        O equipamento foi registrado no patrimônio de TI.
+
+    </p>
+
+</div>
+
+
+<div class="confirmar-acoes">
+
+    <button
+        id="okSucesso"
+        class="button"
+        type="button"
+    >
+
+        OK
+
+    </button>
+
+</div>
+
+
+</div>
+
+</div>
+
+<div id="modalErro" class="modal">
+    <div class="modal-conteudo">
+
+        <h2>Patrimônio já cadastrado</h2>
+
+        <p id="mensagemErro"></p>
+
+        <button
+            type="button"
+            id="okErro">
+            OK
+        </button>
+
+    </div>
+</div>
+
+<div id="modalPerfil">
+
+    <div class="modal-perfil-conteudo">
+
+        <button
+            type="button"
+            id="fecharPerfil"
+            class="fechar-modal">
+            ×
+        </button>
+
+        <h2>DESENVOLVIDO POR:</h2>
+
+        <div class="perfil-info">
+            <strong>Nome:</strong>
+            <span>JOÃO VICTOR</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Setor:</strong>
+            <span>TI</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Email:</strong>
+            <span>ti1@gtmalimentos.com.br</span>
+        </div>
+
+        <div class="perfil-info">
+            <strong>Telefone:</strong>
+            <span>(31) 99855-5613</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/actions.js"></script>
+<script src="js/local-data.js"></script>
+<script src="js/local-view.js"></script>
+
+
+
+</body>
+
+</html>

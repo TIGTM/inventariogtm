@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Equipamentos - GTM</title>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header class="top">
+
+            <img src="assets/icone-gtm.png" alt="GTM Alimentos">
+
+            <div class="brand" data-ui-click="a23">
+
+                GTM ALIMENTOS
+
+                <small>TECNOLOGIA DA INFORMAÇÃO</small>
+            </div>
+
+            <div class="user">
+                <span id="abrirPerfil" class="nome-usuario">JOÃO VICTOR</span>
+            </div>
+
+        </header>
+
+        <aside class="side">
+
+            <h3>PATRIMÔNIO DE TI</h3>
+
+            <div class="nav" data-ui-click="a24">
+                Visão geral
+            </div>
+
+            <div class="nav active" data-ui-click="a25">
+                Equipamentos
+            </div>
+
+            <div class="nav" data-ui-click="a26">
+                Cadastrar Equipamentos
+            </div>
+
+            <div class="nav nav-static">
+                Movimentações
+            </div>
+
+        </aside>
+
+        <main class="main">
+
+            <div class="eyebrow">PATRIMÔNIO</div>
+
+            <h1 class="title">Equipamentos</h1>
+
+            <p class="sub">
+                Consulte e acompanhe todos os equipamentos cadastrados no
+                patrimônio de TI.
+            </p>
+
+            <section class="bar">
+
+                <input
+                    id="campoBusca"
+                    class="search"
+                    type="text"
+                    placeholder="Buscar por patrimônio, serial, modelo ou responsável"
+                >
+
+                <select id="filtroTipo" class="select">
+                    <option value="">Todos os tipos</option>
+                    <option value="Notebook / Desktop">Notebook / Desktop</option>
+                    <option value="Celular / Tablet">Celular / Tablet</option>
+                    <option value="Comum">Comum</option>
+                </select>
+
+                <select id="filtroStatus" class="select">
+                    <option value="">Todos os status</option>
+                    <option value="Em uso">Em uso</option>
+                    <option value="Em estoque">Em estoque</option>
+                    <option value="Em manutenção">Em manutenção</option>
+                    <option value="Baixa">Baixa</option>
+                </select>
+
+                <button
+                    type="button"
+                    class="button" data-ui-click="a28">
+                    + CADASTRAR EQUIPAMENTO
+                </button>
+
+            </section>
+
+            <section class="panel">
+
+                <div class="equipment-header">
+                    <h2 class="section-title">Equipamentos cadastrados</h2>
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>PATRIMÔNIO</th>
+                                <th>EQUIPAMENTO</th>
+                                <th>MARCA / MODELO</th>
+                                <th>Nº DE SÉRIE</th>
+                                <th>RESPONSÁVEL</th>
+                                <th>SETOR</th>
+                                <th>LOCAL</th>
+                                <th>STATUS</th>
+                                <th>TERMO</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tabelaEquipamentos">
+
+                            
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Modal de informações do equipamento -->
+    <div id="modalInformacoes" class="modal-overlay">
+
+        <div class="modal-informacoes">
+
+            <div class="modal-informacoes-header">
+                <h2>Informações do equipamento</h2>
+
+                <button
+                    type="button"
+                    class="fechar-modal" data-ui-click="a29">
+                    ×
+                </button>
+            </div>
+
+            <div
+                id="modalInformacoesConteudo"
+                class="modal-informacoes-conteudo">
+            </div>
+
+            <div class="modal-informacoes-footer">
+                <button
+                    type="button"
+                    class="btn-fechar-modal" data-ui-click="a30">
+                    FECHAR
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal de histórico -->
+    <div id="modalHistorico" class="modal-overlay">
+
+        <div class="modal-informacoes">
+
+            <div class="modal-informacoes-header">
+                <h2>Histórico do equipamento</h2>
+
+                <button
+                    type="button"
+                    class="fechar-modal" data-ui-click="a31">
+                    ×
+                </button>
+            </div>
+
+            <div
+                id="modalHistoricoConteudo"
+                class="modal-informacoes-conteudo">
+            </div>
+
+            <div class="modal-informacoes-footer">
+                <button
+                    type="button"
+                    class="btn-fechar-modal" data-ui-click="a32">
+                    FECHAR
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Confirmação de exclusão do histórico -->
+    <div id="confirmarExcluirHistorico" class="modal-overlay">
+
+        <div class="confirmar-modal">
+
+            <div class="confirmar-conteudo">
+                <h2>Excluir movimentação?</h2>
+
+                <p>
+                    Tem certeza que deseja apagar esta movimentação do
+                    histórico?
+                    <br>
+                    Essa ação removerá somente este registro.
+                </p>
+            </div>
+
+            <div class="confirmar-acoes">
+
+                <button
+                    type="button"
+                    class="btn-cancelar" data-ui-click="a33">
+                    CANCELAR
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-apagar" data-ui-click="a34">
+                    APAGAR
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Confirmação visual da exclusão do histórico -->
+    <div id="modalExclusaoSucesso" class="modal-overlay">
+
+        <div class="modal-informacoes">
+
+            <div class="modal-informacoes-header">
+                <h2>Exclusão realizada</h2>
+            </div>
+
+            <div class="modal-informacoes-conteudo">
+                <p style="margin:0; color:var(--texto);">
+                    O registro do histórico foi excluído com sucesso.
+                </p>
+            </div>
+
+            <div class="modal-informacoes-footer">
+                <button
+                    type="button"
+                    class="btn-fechar-modal" data-ui-click="a35">
+                    OK
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal de ações do equipamento -->
+    <div id="modalAcoes" class="modal-overlay">
+
+        <div class="modal-informacoes">
+
+            <div class="modal-informacoes-header">
+                <h2>Ações do equipamento</h2>
+
+                <button
+                    type="button"
+                    class="fechar-modal" data-ui-click="a36">
+                    ×
+                </button>
+            </div>
+
+            <div class="modal-informacoes-conteudo equipamento-acoes">
+                <button type="button" class="btn-fechar-modal acao-equipamento" data-ui-click="a37">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L9 17l-4 1 1-4Z"/></svg>
+                    <span>EDITAR</span>
+                </button>
+                <button type="button" class="btn-fechar-modal acao-equipamento" data-ui-click="a38">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h14m-4-4 4 4-4 4M17 17H3m4-4-4 4 4 4"/></svg>
+                    <span>MOVIMENTAR</span>
+                </button>
+                <button type="button" class="btn-fechar-modal acao-equipamento" data-ui-click="a39">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                    <span>HISTÓRICO</span>
+                </button>
+                <button type="button" class="btn-fechar-modal acao-equipamento" data-ui-click="a40">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m5 4v6m4-6v6"/></svg>
+                    <span>APAGAR</span>
+                </button>
+                <button type="button" class="btn-fechar-modal acao-equipamento" data-ui-click="a41">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>
+                    <span>CANCELAR</span>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- Confirmação de exclusão do equipamento -->
+    <div id="confirmarExcluirEquipamento" class="modal-overlay">
+
+        <div class="confirmar-modal">
+
+            <div class="confirmar-conteudo">
+                <h2>Excluir equipamento?</h2>
+
+                <p>
+                    Tem certeza que deseja apagar este equipamento?
+                    <br>
+                    Todo o histórico desse equipamento também será apagado.
+                </p>
+            </div>
+
+            <div class="confirmar-acoes">
+
+                <button
+                    type="button"
+                    class="btn-cancelar" data-ui-click="a42">
+                    CANCELAR
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-apagar" data-ui-click="a43">
+                    APAGAR
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="dadosEquipamentos" style="display:none;">
+
+        
+
+    </div>
+
+    <!-- Dados do histórico usados pelo JavaScript -->
+    <div id="dadosHistoricos" style="display:none;">
+
+        
+
+    </div>
+
+    <!-- Modal de perfil -->
+    <div id="modalPerfil">
+
+        <div class="modal-perfil-conteudo">
+
+            <button
+                type="button"
+                id="fecharPerfil"
+                class="fechar-modal">
+                ×
+            </button>
+
+            <h2>JOÃO VICTOR</h2>
+
+            <p>Informações do Usuário</p>
+
+            <div class="perfil-info">
+                <strong>Nome:</strong>
+                <span>JOÃO VICTOR</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Setor:</strong>
+                <span>TI</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Email:</strong>
+                <span>ti1@gtmalimentos.com.br</span>
+            </div>
+
+            <div class="perfil-info">
+                <strong>Telefone:</strong>
+                <span>(31) 99855-5613</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/actions.js"></script>
+<script src="js/local-data.js"></script>
+<script src="js/local-view.js"></script>
+    
+
+    
+
+</body>
+</html>

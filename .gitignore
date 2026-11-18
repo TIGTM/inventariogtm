@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+
+.access-initial.txt
+backups/
+*.xlsx
+*.xls
+*.dump
+*.bak
+*.sql
+
+# Relatórios internos e script temporário de conversão
+SECURITY-VERIFICATION.md
+SANKHYA_IMPORT_RESULT.md
+SANKHYA_HISTORY_IMPORT_RESULT.md
+.convert_original.py

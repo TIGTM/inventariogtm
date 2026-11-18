@@ -1,0 +1,8 @@
+*
+!Dockerfile
+!requirements.txt
+!server.py
+!security.py
+!migrate.py
+!frontend/
+!frontend/**

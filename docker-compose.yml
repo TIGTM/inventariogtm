@@ -1,0 +1,53 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./frontend:/app/frontend:ro
+    environment:
+      DATABASE_URL: postgresql://patrimonio_app:${APP_DB_PASSWORD:?Defina APP_DB_PASSWORD}@db:5432/gestao_ti
+      TI_PASSWORD_HASH: ${TI_PASSWORD_HASH:?Defina TI_PASSWORD_HASH}
+      MARKETING_PASSWORD_HASH: ${MARKETING_PASSWORD_HASH:?Defina MARKETING_PASSWORD_HASH}
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:8000}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      PYTHONDONTWRITEBYTECODE: "1"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+  migrate:
+    build: .
+    command: ["python", "migrate.py"]
+    environment:
+      DATABASE_URL: postgresql://gestao:${DB_ADMIN_PASSWORD:?Defina DB_ADMIN_PASSWORD}@db:5432/gestao_ti
+      APP_DB_PASSWORD: ${APP_DB_PASSWORD:?Defina APP_DB_PASSWORD}
+      PYTHONDONTWRITEBYTECODE: "1"
+    depends_on:
+      db:
+        condition: service_healthy
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    restart: "no"
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: gestao_ti
+      POSTGRES_USER: gestao
+      POSTGRES_PASSWORD: ${DB_ADMIN_PASSWORD:?Defina DB_ADMIN_PASSWORD}
+    volumes:
+      - dados_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gestao -d gestao_ti"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+volumes:
+  dados_postgres:
