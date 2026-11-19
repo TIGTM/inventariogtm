@@ -47,8 +47,10 @@ def init_db():
         """)
         conn.execute("ALTER TABLE equipamentos ADD COLUMN IF NOT EXISTS setor TEXT NOT NULL DEFAULT 'TI'")
         conn.execute("ALTER TABLE movimentacoes ADD COLUMN IF NOT EXISTS setor TEXT NOT NULL DEFAULT 'TI'")
+        conn.execute("ALTER TABLE equipamentos ADD COLUMN IF NOT EXISTS excluido BOOLEAN NOT NULL DEFAULT false")
         conn.execute("ALTER TABLE equipamentos DROP CONSTRAINT IF EXISTS equipamentos_patrimonio_key")
-        conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS equipamentos_setor_patrimonio_unique ON equipamentos (setor, patrimonio)")
+        conn.execute("DROP INDEX IF EXISTS equipamentos_setor_patrimonio_unique")
+        conn.execute("CREATE UNIQUE INDEX equipamentos_setor_patrimonio_unique ON equipamentos (setor, patrimonio) WHERE NOT excluido")
 
 
 def equipment_row(row):
@@ -228,7 +230,7 @@ def import_local(data: dict, request: Request):
             if not patrimonio:
                 continue
             item.setdefault("status", "Em estoque")
-            row = conn.execute("INSERT INTO equipamentos (patrimonio, dados, setor) VALUES (%s, %s, 'TI') ON CONFLICT (setor, patrimonio) DO NOTHING RETURNING *", (patrimonio, Jsonb(item))).fetchone()
+            row = conn.execute("INSERT INTO equipamentos (patrimonio, dados, setor) VALUES (%s, %s, 'TI') ON CONFLICT DO NOTHING RETURNING *", (patrimonio, Jsonb(item))).fetchone()
             if row:
                 ids[old_id] = row["id"]
         for record in movimentacoes:

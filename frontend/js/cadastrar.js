@@ -178,9 +178,6 @@ btnSalvar.addEventListener(
             modelo:
                 valor("modelo"),
 
-            local:
-                valor("local"),
-
             processador: "",
             memoria: "",
             armazenamento: "",
@@ -196,8 +193,6 @@ btnSalvar.addEventListener(
             imei2: "",
             capacidade: "",
             cor: "",
-            numero: "",
-            operadora: "",
 
             tipoComum: "",
             condicao: "",
@@ -295,12 +290,6 @@ btnSalvar.addEventListener(
             equipamento.cor =
                 valor("cor");
 
-            equipamento.numero =
-                valor("numero");
-
-            equipamento.operadora =
-                valor("operadora");
-
         }
 
 
@@ -347,7 +336,6 @@ btnSalvar.addEventListener(
             salvando = true;
             btnSalvar.disabled = true;
             btnSalvar.innerText = "SALVANDO...";
-            equipamento.iccid = valor("iccid");
             await LocalTI.create(equipamento);
             document.getElementById("modalSucesso").style.display = "flex";
         } catch (erro) {
