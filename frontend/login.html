@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Acesso | Patrimônio GTM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="login-page">
   <main class="login-shell">
     <section class="login-brand-panel">
@@ -20,18 +22,19 @@
         <span class="login-kicker">BEM-VINDO</span>
         <h2 id="loginTitle">Escolha seu departamento</h2>
         <p id="loginDescription" class="login-description">Selecione uma área para continuar.</p>
-          <div id="sectorStep" class="login-sector-options" aria-label="Departamento">
-            <button type="button" class="login-sector" data-sector="TI">
-              <span><strong>TECNOLOGIA DA INFORMAÇÃO</strong><small>Patrimônio de TI</small></span>
-            </button>
-            <button type="button" class="login-sector" data-sector="MARKETING">
-              <span><strong>MARKETING</strong><small>Equipamentos de Marketing</small></span>
-            </button>
-          </div>
+        <div id="sectorStep" class="login-sector-options" aria-label="Departamento">
+          <button type="button" class="login-sector" data-sector="TI">
+            <span><strong>TECNOLOGIA DA INFORMAÇÃO</strong><small>Patrimônio de TI</small></span>
+          </button>
+          <button type="button" class="login-sector" data-sector="MARKETING">
+            <span><strong>MARKETING</strong><small>Equipamentos de Marketing</small></span>
+          </button>
+        </div>
         <form id="loginForm" hidden novalidate>
           <button id="loginBack" class="login-back" type="button">← Trocar departamento</button>
           <label class="login-label" for="senha">Senha</label>
-          <input id="senha" class="login-password" type="password" autocomplete="current-password" placeholder="Digite sua senha" aria-describedby="loginError" required>
+          <input id="senha" class="login-password" type="password" autocomplete="current-password"
+            placeholder="Digite sua senha" aria-describedby="loginError" required>
           <p id="loginError" class="login-error" role="alert" hidden></p>
           <button id="loginSubmit" class="login-submit" type="submit">Entrar</button>
         </form>
@@ -41,4 +44,5 @@
   </main>
   <script src="js/login.js"></script>
 </body>
+
 </html>

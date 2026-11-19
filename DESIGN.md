@@ -1,4 +1,13 @@
-# Gestão de equipamentos de TI — visual original
+# Gestão de equipamentos de TI — direção visual
+
+## Redesenho autorizado em 19/11/2026
+
+O usuário autorizou mudar toda a interface, preservando a paleta GTM. A direção atual usa navegação azul petróleo, superfícies claras com sombras suaves, tipografia mais expressiva, cartões de indicadores, campos amplos e animações discretas. Login, TI e Marketing compartilham o mesmo sistema visual. O CSS de referência permanece em `frontend/css/style.css`; o novo conjunto de regras fica ao final do arquivo e prevalece sobre as regras históricas. O modo escuro mantém a mesma estrutura. Movimento reduzido é respeitado. As seções abaixo registram o histórico da conversão anterior e não restringem este redesenho.
+
+O usuário pediu mais movimento em toda a interface. Cabeçalho, logo, navegação, títulos, cartões, formulários, primeiras linhas da tabela, modais e login agora têm entradas em sequência ou respostas a interação. Animações contínuas ficam limitadas ao brilho suave do cabeçalho, ao logo e ao elemento decorativo do login. A opção de movimento reduzido desativa todas elas.
+
+A tabela de equipamentos mantém linhas e colunas. O cabeçalho tem fundo azul claro, o patrimônio recebe peso visual maior e cada linha ganha separação suave. Status e ações têm contraste melhor. No celular, permanece a apresentação empilhada já existente.
+
 
 ## Regra do projeto
 
